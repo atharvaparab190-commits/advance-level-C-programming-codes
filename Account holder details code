@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+struct deposit_money
+{
+    char bank_name[30];
+    int Amount;
+};
+
+struct create_Account
+{
+    int phone_no;
+    char name[20];
+    struct deposit_money addr;
+};
+
+int main()
+{
+    struct create_Account c;
+
+    printf("Enter phone number: ");
+    scanf("%d", &c.phone_no);
+
+    printf("Enter name: ");
+    scanf("%s", c.name);
+
+    printf("Enter bank name: ");
+    scanf("%s", c.addr.bank_name);
+
+    printf("Enter amount: ");
+    scanf("%d", &c.addr.Amount);
+
+    printf("\n=== Account Holder Details ===\n");
+    printf("Phone Number : %d\n", c.phone_no);
+    printf("Name         : %s\n", c.name);
+    printf("Bank Name    : %s\n", c.addr.bank_name);
+    printf("Amount       : %d\n", c.addr.Amount);
+
+    return 0;
+}
